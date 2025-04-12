@@ -48,6 +48,7 @@ It's like turning a single blog post into a multichannel marketing weapon with o
   ![new_socia_cloud_arch](https://github.com/user-attachments/assets/162dc992-f23d-471b-ac4a-b98275d4363e)
 - Scheduling architecture build with heap and workers based on go routines
   ![scheduler-social-scribe](https://github.com/user-attachments/assets/5f320c4d-68c7-446c-b929-adce099fbddb)
+  Github Actions
   ![ci_cd_social](https://github.com/user-attachments/assets/3b83b2ff-5a02-4b12-80dd-802ca4e86909)
 
 ---
