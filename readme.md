@@ -53,7 +53,7 @@ No more copy-pasting, rewording, and switching tabs. Write once. Share smart.
 
 - Built using **Go routines + heap-based priority queue**
 - Worker-Agent architecture
-- Handles retries, backoffs, and concurrent posting
+- Handles retries, and concurrent posting
 
 ![Scheduler Architecture](https://github.com/user-attachments/assets/5f320c4d-68c7-446c-b929-adce099fbddb)
 
