@@ -21,7 +21,7 @@ const HeroSection = ({ setIsLoggedIn, setUser, apiUrl, setCsrfToken }) => {
         gutterBottom
         sx={{ fontWeight: 'bold', color: '#FF6B6B', fontSize: { xs: '1.8rem', md: '2.5rem' } }}
       >
-        Social Scribe: Automate Your Hashnode Blogs Sharing
+        Blog Share: Automate Your Hashnode Blogs Sharing
       </Typography>
       <Typography
         variant="h6"
@@ -32,7 +32,7 @@ const HeroSection = ({ setIsLoggedIn, setUser, apiUrl, setCsrfToken }) => {
           color: '#FFFFFF',
         }}
       >
-        Connect Hashnode, LinkedIn, X, and ChatGPT to seamlessly summarize, share, and schedule your
+        Connect Hashnode, LinkedIn, X, and Gemini AI to seamlessly summarize, share, and schedule your
         blogs across all platforms.
       </Typography>
 
