@@ -22,7 +22,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
-const BlogCard = ({ blog, apiUrl, checkLoggedIn }) => {
+const BlogCard = ({ blog, apiUrl, checkLoggedIn, csrfToken }) => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const tab = queryParams.get('tab');

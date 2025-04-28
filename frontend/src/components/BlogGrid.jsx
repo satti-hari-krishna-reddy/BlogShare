@@ -101,7 +101,7 @@ const BlogGrid = ({ blogs, loading, apiUrl, csrfToken, checkLoggedIn }) => {
           }}
         >
           <Box sx={{ width: 320 }}>
-            <BlogCard blog={blogs[0]} apiUrl={apiUrl} checkLoggedIn={checkLoggedIn} />
+            <BlogCard blog={blogs[0]} apiUrl={apiUrl} checkLoggedIn={checkLoggedIn} csrfToken={csrfToken} />
           </Box>
         </Box>
       );
@@ -111,7 +111,7 @@ const BlogGrid = ({ blogs, loading, apiUrl, csrfToken, checkLoggedIn }) => {
       <Grid container spacing={4} justifyContent="center">
         {blogs.map((blog, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <BlogCard blog={blog} apiUrl={apiUrl} checkLoggedIn={checkLoggedIn} />
+            <BlogCard blog={blog} apiUrl={apiUrl} checkLoggedIn={checkLoggedIn} csrfToken={csrfToken} />
           </Grid>
         ))}
       </Grid>
