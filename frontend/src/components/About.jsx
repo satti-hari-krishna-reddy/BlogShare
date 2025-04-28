@@ -9,7 +9,7 @@ const About = () => {
         gutterBottom
         sx={{ textAlign: 'center', fontWeight: 'bold', color: '#FF6B6B' }}
       >
-        About Social Scribe
+        About Blog Share
       </Typography>
       <Typography
         variant="body1"
@@ -21,7 +21,7 @@ const About = () => {
           fontWeight: 'bold',
         }}
       >
-        Social Scribe is a personal project that originated from an idea I had while participating
+        Blog Share is a personal project that originated from an idea I had while participating
         in the Hashnode API Hackathon. Although it didn’t end up winning, the concept stayed with
         me, and I decided to bring it to life. The goal was simple: automate sharing Hashnode blogs
         across X (Twitter) and LinkedIn, while adding features like scheduling and AI-powered
