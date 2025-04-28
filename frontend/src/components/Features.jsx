@@ -48,7 +48,7 @@ const Features = () => {
               AI-Powered Summaries
             </Typography>
             <Typography variant="body1">
-              Use ChatGPT to create short, engaging summaries before sharing to socials.
+              Use Gemini to create short, engaging summaries before sharing to socials.
             </Typography>
           </Box>
         </Grid>
