@@ -168,7 +168,6 @@ func (s *Scheduler) runAgent() {
 }
 
 func (s *Scheduler) worker(task models.ScheduledBlogData) {
-
 	if task.EmailId != "" {
 		if err := services.SendEmail(task.EmailId, task.Message); err != nil {
 			log.Printf("[ERROR] Sending OTP email to %s: %v", task.EmailId, err)
@@ -195,7 +194,13 @@ func (s *Scheduler) worker(task models.ScheduledBlogData) {
 
 		processErr := services.ProcessSharedBlog(user, blogId, platforms)
 		if processErr != nil {
-			log.Printf("[ERROR] Error processing shared blog for blog id %s and user id %s: %v", blogId, task.UserID, processErr)
+			log.Printf("[ERROR] First attempt failed for blog id %s (user %s): %v, retrying once!", blogId, task.UserID, processErr)
+
+			// Single retry attempt for now and i need to find a better way to do this.
+			processErr = services.ProcessSharedBlog(user, blogId, platforms)
+			if processErr != nil {
+				log.Printf("[ERROR] Retry attempt also failed for blog id %s (user %s): %v", blogId, task.UserID, processErr)
+			}
 		}
 
 		delErr := repo.DeleteScheduledTask(task)
