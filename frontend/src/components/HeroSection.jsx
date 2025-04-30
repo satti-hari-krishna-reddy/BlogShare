@@ -32,8 +32,8 @@ const HeroSection = ({ setIsLoggedIn, setUser, apiUrl, setCsrfToken }) => {
           color: '#FFFFFF',
         }}
       >
-        Connect Hashnode, LinkedIn, X, and Gemini AI to seamlessly summarize, share, and schedule your
-        blogs across all platforms.
+        Connect Hashnode, LinkedIn, X, and Gemini AI to seamlessly summarize, share, and schedule
+        your blogs across all platforms.
       </Typography>
 
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
