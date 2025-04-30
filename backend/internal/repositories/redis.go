@@ -3,6 +3,7 @@ package repositories
 
 import (
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -21,6 +22,10 @@ func InitRedis() {
 	redisAddr := os.Getenv("REDIS_ADDR")
 	redisPassword := os.Getenv("REDIS_PASSWORD")
 	redisDB, err := strconv.Atoi(os.Getenv("REDIS_DB"))
+	var tlsConfig *tls.Config
+	if os.Getenv("REDIS_USE_TLS") == "true" {
+		tlsConfig = &tls.Config{}
+	}
 	if err != nil {
 		log.Println("[WARN] REDIS_DB not set or invalid, using default value")
 		redisDB = 0
@@ -34,9 +39,10 @@ func InitRedis() {
 	}
 
 	RedisClient = redis.NewClient(&redis.Options{
-		Addr:     redisAddr,
-		Password: redisPassword,
-		DB:       redisDB,
+		Addr:      redisAddr,
+		Password:  redisPassword,
+		DB:        redisDB,
+		TLSConfig: tlsConfig,
 	})
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
