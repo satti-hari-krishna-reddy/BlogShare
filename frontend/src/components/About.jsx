@@ -21,9 +21,9 @@ const About = () => {
           fontWeight: 'bold',
         }}
       >
-        Blog Share is a personal project that originated from an idea I had while participating
-        in the Hashnode API Hackathon. Although it didn’t end up winning, the concept stayed with
-        me, and I decided to bring it to life. The goal was simple: automate sharing Hashnode blogs
+        Blog Share is a personal project that originated from an idea I had while participating in
+        the Hashnode API Hackathon. Although it didn’t end up winning, the concept stayed with me,
+        and I decided to bring it to life. The goal was simple: automate sharing Hashnode blogs
         across X (Twitter) and LinkedIn, while adding features like scheduling and AI-powered
         summaries.
       </Typography>
