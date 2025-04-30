@@ -6,7 +6,7 @@
 
 ## 🚀 What Problem Does BlogShare Solve?
 
-A lot of individuals, especially developers and bloggers, have a larger following on **social media** (like X/Twitter, LinkedIn) than on traditional blogging platforms like Hashnode.
+A lot of individuals, especially developers and bloggers, have a larger following on **social media** (like X/Twitter, LinkedIn) than on traditional blogging platforms like Hashnode. Watch the [demo video](https://youtu.be/ifMScMTnVYY?si=ZJquCUEmn6EY_Poc).
 
 After writing a blog, people often manually go to each platform, write a small summary/glimpse, and post the blog link. This repetitive manual effort is:
 - **Time-consuming**
