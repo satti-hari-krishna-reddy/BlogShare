@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -18,14 +19,30 @@ var scheduledItemsCollection *mongo.Collection
 
 func InitMongoDb() {
 	mongoURI := os.Getenv("MONGO_URI")
-	if mongoURI == "" {
-		log.Println("[WARN] MONGO_URI not set, using default value")
-		mongoURI = "mongodb://localhost:27017"
+	mongoUser := os.Getenv("MONGO_USER")
+	mongoPassword := os.Getenv("MONGO_PASSWORD")
+	mongoHost := os.Getenv("MONGO_HOST")
+	dbName := os.Getenv("MONGO_DB")
+
+	if mongoHost == "" {
+		mongoHost = "localhost:27017"
 	}
+
+	if mongoURI == "" {
+		if mongoUser != "" && mongoPassword != "" {
+			mongoURI = fmt.Sprintf("mongodb://%s:%s@%s", mongoUser, mongoPassword, mongoHost)
+		} else {
+			log.Println("[WARN] No MONGO_URI and no auth credentials, connecting without auth")
+			mongoURI = fmt.Sprintf("mongodb://%s", mongoHost)
+		}
+	}
+
+	if dbName == "" {
+		dbName = "social-scribe"
+	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-
-	dbName := "social-scribe"
 
 	clientOptions := options.Client().ApplyURI(mongoURI)
 	var err error
@@ -34,10 +51,11 @@ func InitMongoDb() {
 		log.Fatal("[ERROR] Failed connecting to MongoDB:", err)
 	}
 
-	err = client.Ping(ctx, nil)
-	if err != nil {
-		log.Fatal("Could not ping MongoDB:", err)
+	if err = client.Ping(ctx, nil); err != nil {
+		log.Fatal("[ERROR] Could not ping MongoDB:", err)
 	}
+
+	log.Printf("[INFO] Successfully connected to MongoDB (%s), using database %q\n", mongoURI, dbName)
 
 	userCollection = client.Database(dbName).Collection("users")
 	cacheCollection = client.Database(dbName).Collection("cache")
