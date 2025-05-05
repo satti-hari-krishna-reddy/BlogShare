@@ -12,7 +12,7 @@ const HowItWorks = () => {
         How It Works
       </Typography>
       <Typography variant="body1" sx={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-        Connect your Hashnode, X, LinkedIn, and ChatGPT accounts. Automate blog summarization and
+        Connect your Hashnode, X, LinkedIn, and Gemini AI accounts. Automate blog summarization and
         scheduling with a few clicks.
       </Typography>
     </Box>
