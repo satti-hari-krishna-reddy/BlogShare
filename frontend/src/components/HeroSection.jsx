@@ -21,7 +21,7 @@ const HeroSection = ({ setIsLoggedIn, setUser, apiUrl, setCsrfToken }) => {
         gutterBottom
         sx={{ fontWeight: 'bold', color: '#FF6B6B', fontSize: { xs: '1.8rem', md: '2.5rem' } }}
       >
-        Blog Share: Automate Your Hashnode Blogs Sharing
+        Blog Share: CI/CD TESTING
       </Typography>
       <Typography
         variant="h6"
