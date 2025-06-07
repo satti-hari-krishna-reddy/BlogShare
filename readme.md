@@ -145,7 +145,6 @@ Visit: `http://localhost:3000`
 
 Crafted with 💻 + ☕ by [@satti-hari-krishna-reddy](https://github.com/satti-hari-krishna-reddy)
 
-> Trying to solve a real-world problem with sharp tech. If you’re hiring for backend or full-stack roles — let’s chat 😉
 
 
 ---
